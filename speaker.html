@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="Speaker.js" charset="UTF-8"></script>
+
+    <script>
+
+        //Creamos las instancias de la clase speaker
+        let frontSpeaker = new Speaker("frontal");
+        
+        
+        frontSpeaker.turnOn();
+        frontSpeaker.setVolume(50);
+        frontSpeaker.print();
+
+
+        let leftSpeaker = new Speaker("izquierdo");
+      
+        
+        leftSpeaker.turnOn();
+        leftSpeaker.print();
+
+        let rigthSpeaker = new Speaker("derecho");
+        
+        
+        rigthSpeaker.turnOn();
+        rigthSpeaker.setVolume(30);
+        rigthSpeaker.print();
+
+
+        let leftRearSpeaker = new Speaker("trasero izquierdo");
+        
+        
+        leftRearSpeaker.turnOn();
+        leftRearSpeaker.setVolume(10);
+        leftRearSpeaker.print();
+
+        let rigthRearSpeaker = new Speaker("trasero derecho");
+        
+        rigthRearSpeaker.print();
+
+
+        let homeCinema = new Array(frontSpeaker,leftSpeaker,rigthSpeaker,leftRearSpeaker,rigthRearSpeaker);
+      
+        for(let i = 0; i < 5; i++){
+            leftSpeaker.increaseVolume();
+        }
+        leftSpeaker.print();
+
+        // Dos formas de hacer lo mismo
+        leftSpeaker.increaseVolume();
+        leftSpeaker.increaseVolume();
+        leftSpeaker.increaseVolume();
+        leftSpeaker.increaseVolume();
+        leftSpeaker.increaseVolume();
+        leftSpeaker.print();
+
+        rigthRearSpeaker.turnOn();
+        rigthRearSpeaker.print();
+        rigthRearSpeaker.setVolume(35);
+        rigthRearSpeaker.print();
+
+        
+        for (let i = 0; i < homeCinema.length; i++){
+            homeCinema[i].turnOff();
+            homeCinema[i].print();
+        }
+
+        let copia = frontSpeaker.copy();
+        copia.print();
+        copia.turnOn();
+        
+        copia.setVolume(80);
+        frontSpeaker.print();
+        copia.print();
+       
+        // frontSpeaker.turnOff();
+        // leftSpeaker.turnOff();
+        // rigthSpeaker.turnOff();
+        // leftRearSpeaker.turnOff();
+        // rigthRearSpeaker.turnOff();
+
+        // frontSpeaker.print();
+        // leftSpeaker.print();
+        // rigthSpeaker.print();
+        // leftRearSpeaker.print();
+        // rigthRearSpeaker.print();
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
